@@ -1,17 +1,30 @@
 import React, {h, Component} from 'react';
+const DarkSkyApi = require('dark-sky-api');
+DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
+
+function getLoc() {
+    return JSON.parse(document.cookie).loc;
+}
+
+function getCurrTime() {
+    var d = new Date();
+    return d.getHours() + ":" + d.getMinutes();
+}
+
 
 export default class Header extends Component{
+
     render(){
         var styles = {
             topBar: {
-                height: '45px',
+                height: '46px',
                 backgroundColor: "#dedfe0"
             },
 
             barText: {
-                width: "50px",
-                position: "absolute",
-                left: "30%"
+                textAlign: "center",
+                margin: 0,
+                padding: "2px",
             },
 
             burger: {
@@ -20,15 +33,21 @@ export default class Header extends Component{
                 color: "#5a5a5c"
             },
 
-            mainContent: {
-                textAlign: "center",
-                backgroundColor: "#adaeaf",
+            topTextArea: {
+                width: "100%",
+                height: "inherit",
+                position: "absolute",
+                top: "0px",
+                right: "0px",
             }
         };
 
         return(
             <div style={styles.topBar}>
-                <p style={styles.barText}>Location/CurrentWeather</p>
+                <div style={styles.topTextArea}>
+                    <h3 style={styles.barText}>{getLoc()}</h3>
+                    <h4 style={styles.barText}>{getCurrTime()}</h4>
+                </div>
                 <i className="fas fa-bars" style={styles.burger}/>
             </div>
         )
