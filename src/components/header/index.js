@@ -21,22 +21,16 @@ export default class Header extends Component{
             },
 
             mainContent: {
+                textAlign: "center",
                 backgroundColor: "#adaeaf",
             }
         };
 
         return(
-            <div>
-                <div style={styles.topBar}>
-                    <p style={styles.barText}>Location/CurrentWeather</p>
-                    <i className="fas fa-bars" style={styles.burger}/>
-                </div>
-                <div style={styles.mainContent}>
-                    <p>hello text</p>
-
-                </div>
+            <div style={styles.topBar}>
+                <p style={styles.barText}>Location/CurrentWeather</p>
+                <i className="fas fa-bars" style={styles.burger}/>
             </div>
-
         )
     }
 }
