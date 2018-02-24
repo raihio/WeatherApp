@@ -102,9 +102,11 @@ export default class Header extends Component{
                 </div>
                 <div style={topBarStyles.burgerDiv} onClick={openMenu}><i className="fas fa-bars" style={topBarStyles.burger} onClick={openMenu}/></div>
                 <div style={side.sideNav} id={"sideNav"}>
-                    <a href={"javascript:void(0)"} style={side.sideNavCloseBtn} onClick={closeMenu}> <i class="fas fa-times"/> </a>
+                    <Router>
+                    </Router>
+{/*                    <a href={"javascript:void(0)"} style={side.sideNavCloseBtn} onClick={closeMenu}> <i class="fas fa-times"/> </a>
                     <a href={"#"} className="menuItem"> menuitem one </a>
-                    <a href={"#"} className="menuItem"> menu item two </a>
+                    <a href={"#"} className="menuItem"> menu item two </a>*/}
                 </div>
             </div>
         )
