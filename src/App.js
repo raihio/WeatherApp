@@ -1,14 +1,15 @@
 import './style.css';
 import React, { Component } from 'react';
 import Header from './components/header';
+import ChangeLoc from './components/changeLoc';
 import Main from './components/mainPage';
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
 function setInitialLocation() {
     var position = {
-        latitude: 51.5287718,
-        longitude: -0.2416804,
+        latitude: "51.5287718",
+        longitude: "-0.2416804",
         loc: "London"
     };
     DarkSkyApi.loadCurrent(position).then(result => {
@@ -33,7 +34,7 @@ export default class App extends Component {
         return (
             <div onLoad={setInitialLocation()}>
                 <Header/>
-                <Main/>
+                <ChangeLoc/>
             </div>
         );
     }

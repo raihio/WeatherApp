@@ -4,7 +4,7 @@ export default class mainPage extends Component{
     render(){
         return(
             <div>
-                <h1>Hello stuff goes here</h1>
+                <h1>asdsadsadasd</h1>
             </div>
         )
     }
