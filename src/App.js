@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import ChangeLoc from './components/changeLoc';
 import Main from './components/mainPage';
+import {Route} from "react-router-dom";
+import Router from "react-router-dom/es/Router";
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
@@ -12,9 +14,9 @@ function setInitialLocation() {
         longitude: "-0.2416804",
         loc: "London"
     };
-    DarkSkyApi.loadCurrent(position).then(result => {
-        console.log(result);
-    });
+    //DarkSkyApi.loadCurrent(position).then(result => {
+    //    console.log(result);
+    //});
 
     document.cookie = JSON.stringify(position);
     //console.log(document.cookie);
@@ -34,7 +36,6 @@ export default class App extends Component {
         return (
             <div onLoad={setInitialLocation()}>
                 <Header/>
-                <ChangeLoc/>
             </div>
         );
     }

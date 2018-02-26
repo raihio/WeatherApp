@@ -5,6 +5,8 @@ import {
     Route,
     Link
 } from 'react-router-dom';
+import mainPage from "../mainPage";
+import changeLoc from "../changeLoc";
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
@@ -28,7 +30,7 @@ export default class Header extends Component{
     render(){
         var topBarStyles = {
             topBar: {
-                height: '46px',
+                height: "10%",
                 backgroundColor: "#dedfe0"
             },
 
@@ -84,6 +86,17 @@ export default class Header extends Component{
             },
         };
 
+
+        var main = {
+            body: {
+                position:"absolute",
+                height: "80%",
+                width: "-webkit-fill-available",
+                padding: "5%"
+            }
+        };
+
+
         function openMenu(e) {
             e.preventDefault();
             document.getElementById("sideNav").style.width = "250px";
@@ -94,21 +107,36 @@ export default class Header extends Component{
             document.getElementById("sideNav").style.width = "0px";
         }
 
+
+
         return(
-            <div style={topBarStyles.topBar}>
-                <div style={topBarStyles.topTextArea}>
-                    <h3 style={topBarStyles.barText}>{getLoc()}</h3>
-                    <h4 style={topBarStyles.barText}>{getCurrTime()}</h4>
+            <Router>
+                <div>
+                    <div style={topBarStyles.topBar}>
+                        <div style={topBarStyles.topTextArea}>
+                            <h3 style={topBarStyles.barText}>{getLoc()}</h3>
+                            <h4 style={topBarStyles.barText}>{getCurrTime()}</h4>
+                        </div>
+                        <div style={topBarStyles.burgerDiv} onClick={openMenu} ><i className="fas fa-bars" style={topBarStyles.burger} onClick={openMenu}/></div>
+                        <div style={side.sideNav} id={"sideNav"}>
+                            <a href={"javascript:void(0)"} style={side.sideNavCloseBtn} onClick={closeMenu}> <i class="fas fa-times"/> </a>
+                            <div onClick={closeMenu}>
+                                <Link to="/" className="menuItem">Home</Link>
+                                <Link to="" className="menuItem">Weekly Weather</Link>
+                                <Link to="" className="menuItem">Travel Status</Link>
+                                <Link to="/changeLoc" className="menuItem">Change Location</Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div style={main.body}>
+                        <Route exact path="/" component={mainPage}/>
+                        <Route path="/changeLoc" component={changeLoc}/>
+                    </div>
                 </div>
-                <div style={topBarStyles.burgerDiv} onClick={openMenu}><i className="fas fa-bars" style={topBarStyles.burger} onClick={openMenu}/></div>
-                <div style={side.sideNav} id={"sideNav"}>
-                    <Router>
-                    </Router>
-{/*                    <a href={"javascript:void(0)"} style={side.sideNavCloseBtn} onClick={closeMenu}> <i class="fas fa-times"/> </a>
-                    <a href={"#"} className="menuItem"> menuitem one </a>
-                    <a href={"#"} className="menuItem"> menu item two </a>*/}
-                </div>
-            </div>
+            </Router>
+
+
         )
     }
+
 }
