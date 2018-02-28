@@ -1,0 +1,20 @@
+
+.wholeForm {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.Elem {
+    margin: 5px;
+}
+
+.curLoc {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+#responseMess {
+    width: fit-content;
+    margin: 15px auto;
+    visibility: hidden;
+}

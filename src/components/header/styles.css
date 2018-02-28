@@ -28,7 +28,7 @@
     position: relative;
 }
 
-.burger {
+#burger {
     font-size: 249%;
     padding: 5px;
     color: rgba(0, 0, 0, 0.85);
@@ -66,9 +66,7 @@
     margin-left: 50px;
 }
 
-body {
-    position: absolute;
+.bodyStuff {
     height: 80%;
-    width: -moz-available;
     padding: 5%;
 }
