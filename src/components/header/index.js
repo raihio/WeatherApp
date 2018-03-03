@@ -8,6 +8,7 @@ import {
 import mainPage from "../mainPage";
 import changeLoc from "../changeLoc";
 import weekly from '../weeklyWeather';
+import tubeUpdates from '../tubeUpdates';
 
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
@@ -58,7 +59,7 @@ export default class Header extends Component{
                             <div onClick={closeMenu}>
                                 <Link to="/" className="menuItem">Home</Link>
                                 <Link to="/weekly" className="menuItem">Weekly Weather</Link>
-                                <Link to="" className="menuItem">Travel Status</Link>
+                                <Link to="/travel" className="menuItem">Travel Status</Link>
                                 <Link to="/changeLoc" className="menuItem">Change Location</Link>
                             </div>
                         </div>
@@ -67,6 +68,7 @@ export default class Header extends Component{
                         <Route exact path="/" component={mainPage}/>
                         <Route path="/changeLoc" component={changeLoc}/>
                         <Route path="/weekly" component={weekly}/>
+                        <Route path="/travel" component={tubeUpdates}/>
                     </div>
                 </div>
             </Router>

@@ -10,8 +10,14 @@
 
 .tableWrap tr:nth-child(even) {background-color: rgba(215, 215, 215, 0.75);}
 
-.tableWrap td {
+.cell {
     text-align: center;
+    padding: 7px;
+    width: fit-content;
+    height: 50px;
+}
+
+.imageCell {
     padding: 7px;
     width: 100px;
     height: 50px;

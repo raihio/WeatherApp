@@ -7,7 +7,6 @@ DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
 let data = DarkSkyApi.loadItAll('daily,alerts,minutely,flags', JSON.parse(document.cookie))
     .then(result => {
-        console.log(result);
     return result;
 });
 
