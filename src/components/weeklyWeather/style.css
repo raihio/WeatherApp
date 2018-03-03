@@ -1,6 +1,8 @@
 .tableWrap {
     margin: 25px auto;
     width: fit-content;
+    border: 1px solid rgba(34, 34, 34, 0.85);
+    border-collapse: collapse;
 }
 
 .tableWrap table, th, td {
@@ -8,17 +10,17 @@
     border-collapse: collapse;
 }
 
-.tableWrap tr:nth-child(even) {background-color: rgba(215, 215, 215, 0.75);}
+.tableWrap tr:nth-child(even) {background-color: rgba(0, 0, 0, 0);}
 
 .cell {
     text-align: center;
-    padding: 7px;
+    padding: 5.5px;
     width: fit-content;
     height: 50px;
 }
 
 .imageCell {
-    padding: 7px;
+    padding: 5.5px;
     width: 100px;
     height: 50px;
 }

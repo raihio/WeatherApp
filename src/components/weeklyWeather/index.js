@@ -92,46 +92,52 @@ export default class weeklyWeather extends Component{
             <div className="tableWrap">
                 <table>
                     <tr>
+                        <td className="cell">Day</td>
+                        <td className="cell">Tmperature</td>
+                        <td className="cell">Atmosphere</td>
+                        <td className="cell">Render</td>
+                        </tr>
+                    <tr>
                         <td className="cell">{this.state.one.day}</td>
                         <td className="cell">{this.state.one.temp}</td>
                         <td className="cell">{this.state.one.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.one.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.one.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.two.day}</td>
                         <td className="cell">{this.state.two.temp}</td>
                         <td className="cell">{this.state.two.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.two.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.two.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.three.day}</td>
                         <td className="cell">{this.state.three.temp}</td>
                         <td className="cell">{this.state.three.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.three.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.three.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.four.day}</td>
                         <td className="cell">{this.state.four.temp}</td>
                         <td className="cell">{this.state.four.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.four.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.four.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.five.day}</td>
                         <td className="cell">{this.state.five.temp}</td>
                         <td className="cell">{this.state.five.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.five.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.five.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.six.day}</td>
                         <td className="cell">{this.state.six.temp}</td>
                         <td className="cell">{this.state.six.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.six.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.six.icon} autoplay={true}/></td>
                     </tr>
                     <tr>
                         <td className="cell">{this.state.seven.day}</td>
                         <td className="cell">{this.state.seven.temp}</td>
                         <td className="cell">{this.state.seven.summary}</td>
-                        <td className="imageCell"><Skycons color='white' icon={this.state.seven.icon} autoplay={true}/></td>
+                        <td className="imageCell"><Skycons color='black' icon={this.state.seven.icon} autoplay={true}/></td>
                     </tr>
                 </table>
             </div>

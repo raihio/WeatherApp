@@ -3,33 +3,35 @@
     width: fit-content;
 }
 
+#current{
+    height: 180px;
+}
+
+#tableWrapper{
+    padding-top: 55px;
+}
+
 #tableWrapper table, th, td {
     border: 1px solid rgba(34, 34, 34, 0.85);
     border-collapse: collapse;
     margin: 0 auto;
     width: fit-content;
-    height: fit-content;
 }
-
-#current {
-
-}
-
-#tableWrapper tr:nth-child(even) {background-color: rgba(215, 215, 215, 0.85);}
 
 #tableWrapper td {
     text-align: center;
-    padding: 7px;
+    padding: 1px;
     width: 100px;
-    height: 50px;
+    height: 45px;
 }
 
 #farenDiv {
     position: relative;
-    bottom: 43px;
-    left: 120px;
+    left: 59px;
     width: fit-content;
     margin: 0 auto;
+    font-size: 170%;
+    bottom: 65px;
 }
 
 #farenDiv h1 {
@@ -38,12 +40,14 @@
 
 #celsDiv {
     position: relative;
-    right: 120px;
-    bottom: 10px;
+    right: 53px;
     width: fit-content;
     margin: 0 auto;
+    font-size: 170%;
+    bottom: 8px;
 }
 
 #celsDiv h1 {
     margin: 0 auto;
 }
+
