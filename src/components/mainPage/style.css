@@ -1,0 +1,49 @@
+#mainDiv {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#tableWrapper table, th, td {
+    border: 1px solid rgba(34, 34, 34, 0.85);
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+}
+
+#current {
+
+}
+
+#tableWrapper tr:nth-child(even) {background-color: rgba(215, 215, 215, 0.85);}
+
+#tableWrapper td {
+    text-align: center;
+    padding: 7px;
+    width: 100px;
+    height: 50px;
+}
+
+#farenDiv {
+    position: relative;
+    bottom: 43px;
+    left: 120px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#farenDiv h1 {
+    margin: 0 auto;
+}
+
+#celsDiv {
+    position: relative;
+    right: 120px;
+    bottom: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#celsDiv h1 {
+    margin: 0 auto;
+}

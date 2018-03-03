@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import mainPage from "../mainPage";
 import changeLoc from "../changeLoc";
+import weekly from '../weeklyWeather';
+
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
@@ -28,9 +30,6 @@ export default class Header extends Component{
 
     constructor() {
         super();
-        this.state = {
-            loc: "London"
-        };
     }
 
     render(){
@@ -58,7 +57,7 @@ export default class Header extends Component{
                             <a href={"javascript:void(0)"} className="sideNavCloseBtn" onClick={closeMenu}> <i class="fas fa-times"/> </a>
                             <div onClick={closeMenu}>
                                 <Link to="/" className="menuItem">Home</Link>
-                                <Link to="" className="menuItem">Weekly Weather</Link>
+                                <Link to="/weekly" className="menuItem">Weekly Weather</Link>
                                 <Link to="" className="menuItem">Travel Status</Link>
                                 <Link to="/changeLoc" className="menuItem">Change Location</Link>
                             </div>
@@ -67,6 +66,7 @@ export default class Header extends Component{
                     <div className="bodyStuff">
                         <Route exact path="/" component={mainPage}/>
                         <Route path="/changeLoc" component={changeLoc}/>
+                        <Route path="/weekly" component={weekly}/>
                     </div>
                 </div>
             </Router>
