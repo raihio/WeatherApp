@@ -4,9 +4,7 @@ import Skycons from 'react-skycons'
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
-let data = DarkSkyApi.loadItAll('hourly,alerts,minutely,flags', JSON.parse(document.cookie)).then(result => {
-    return result;
-});
+
 
 export default class weeklyWeather extends Component{
 
@@ -33,6 +31,11 @@ export default class weeklyWeather extends Component{
 
     }
     componentWillMount() {
+
+        let data = DarkSkyApi.loadItAll('hourly,alerts,minutely,flags', JSON.parse(document.cookie)).then(result => {
+            return result;
+        });
+
         data.then(result => {
             var daily = result.daily.data;
             console.log(daily);

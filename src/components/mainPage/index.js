@@ -5,11 +5,6 @@ import Skycons from 'react-skycons'
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
-let data = DarkSkyApi.loadItAll('daily,alerts,minutely,flags', JSON.parse(document.cookie))
-    .then(result => {
-    return result;
-});
-
 export default class mainPage extends Component{
 
     constructor(){
@@ -37,6 +32,11 @@ export default class mainPage extends Component{
     }
 
     componentWillMount(){
+        let data = DarkSkyApi.loadItAll('daily,alerts,minutely,flags', JSON.parse(document.cookie))
+            .then(result => {
+                return result;
+            });
+
         data.then(result => {
             this.setState({
                 mainIcon: result.currently.icon.toUpperCase().replace('-', '_').replace('-', '_'),
