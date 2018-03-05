@@ -41,9 +41,7 @@ export default class changeLoc extends Component{
     };
 
     render(){
-
         return(
-
             <div>
                 <h3 className="curLoc"> Current Location: {getLoc()}</h3>
                 <br/>

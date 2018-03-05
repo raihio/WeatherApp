@@ -2,7 +2,10 @@ html, body {
 	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
 	margin: 0;
-	background-color: #eff0f1;
+	background: linear-gradient(141deg, #2cb5e8 0%, #2a94c5 51%, #277fab 75%);
+	height: -moz-available;          /* WebKit-based browsers will ignore this. */
+	height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+	height: fill-available;
 }
 
 h1 {

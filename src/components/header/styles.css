@@ -2,7 +2,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 20px;
-    color: rgba(213, 213, 213, 0.45);
+    color: rgba(39, 127, 171, 0.8);
     display: block;
     transition: 0.5s;
 }
@@ -14,13 +14,14 @@
 
 .topBar {
     height: 10%;
-    background-color: #dedfe0;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .barText {
     text-align: center;
     margin: 0;
     padding: 2px;
+    color: rgba(248, 248, 255, 0.85);
 }
 
 .burgerDiv {
@@ -31,7 +32,7 @@
 #burger {
     font-size: 249%;
     padding: 5px;
-    color: rgba(0, 0, 0, 0.85);
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
 }
 
@@ -51,7 +52,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     overflow: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -59,7 +60,7 @@
 
 .sideNavCloseBtn {
     position: absolute;
-    color: rgba(216, 216, 216, 0.35);
+    color: rgba(0, 0, 0, 0.6);
     top: 3px;
     right: 15px;
     font-size: 36px;

@@ -3,21 +3,32 @@
     width: fit-content;
 }
 
-.tableWrap table, th, td {
-    border: 1px solid rgba(34, 34, 34, 0.85);
+.tableWrap table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: fit-content;
 }
 
-.tableWrap tr:nth-child(even) {background-color: rgba(0, 0, 0, 0);}
+.tableWrap h1 {
+    color: rgba(248, 248, 255, 0.80);
+    margin: 35px;
+}
+
+.tableWrap td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    color: ghostwhite;
+}
 
 .cell {
     text-align: center;
-    padding: 5.5px;
+    padding: 5px;
     width: fit-content;
     height: 50px;
 }
 
 .imageCell {
-    padding: 5.5px;
+    padding: 5px;
     width: 100px;
     height: 50px;
 }

@@ -20,7 +20,6 @@ export default class mainPage extends Component{
             ten: '',
             twelve: '',
         };
-
     }
 
     static convertTime(timestamp) {
@@ -97,49 +96,50 @@ export default class mainPage extends Component{
             <div className="mainDiv">
                 <div id={"current"}>
                     <Skycons
-                        color='black'
+                        color='#e8e8e8'
                         icon={this.state.mainIcon}
                         autoplay={true}
                     />
-                        <div id="celsDiv"><h1>{this.state.mainFaren}°C</h1></div>
-                        <div id="farenDiv"><h1>{this.state.mainCels}°F</h1></div>
+                        <div id="celsDiv"><h1>{this.state.mainCels}°C | </h1></div>
+                        <div id="farenDiv"><h1>{this.state.mainFaren}°F</h1></div>
                 </div>
                 <div id="tableWrapper">
+                    <hr/>
                     <table>
                         <tr>
-                            <td className="title">Time</td>
-                            <td className="title">Temperature</td>
-                            <td className="title">Atmosphere</td>
+                            <th className="title">Time</th>
+                            <th className="title">Temperature</th>
+                            <th className="title">Atmosphere</th>
                             </tr>
                         <tr>
                             <td>{this.state.two.time}</td>
                             <td>{this.state.two.temp}</td>
-                            <td><Skycons color='black' icon={this.state.two.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.two.icon} autoplay={true}/></td>
                         </tr>
                         <tr>
                             <td>{this.state.four.time}</td>
                             <td>{this.state.four.temp}</td>
-                            <td><Skycons color='black' icon={this.state.four.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.four.icon} autoplay={true}/></td>
                         </tr>
                         <tr>
                             <td>{this.state.six.time}</td>
                             <td>{this.state.six.temp}</td>
-                            <td><Skycons color='black' icon={this.state.six.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.six.icon} autoplay={true}/></td>
                         </tr>
                         <tr>
                             <td>{this.state.eight.time}</td>
                             <td>{this.state.eight.temp}</td>
-                            <td><Skycons color='black' icon={this.state.eight.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.eight.icon} autoplay={true}/></td>
                         </tr>
                         <tr>
                             <td>{this.state.ten.time}</td>
                             <td>{this.state.ten.temp}</td>
-                            <td><Skycons color='black' icon={this.state.ten.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.ten.icon} autoplay={true}/></td>
                         </tr>
                         <tr>
                             <td>{this.state.twelve.time}</td>
                             <td>{this.state.twelve.temp}</td>
-                            <td><Skycons color='black' icon={this.state.twelve.icon} autoplay={true}/></td>
+                            <td><Skycons color='#e8e8e8' icon={this.state.twelve.icon} autoplay={true}/></td>
                         </tr>
                     </table>
                 </div>

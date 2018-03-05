@@ -22,13 +22,13 @@ export default class TubeUpdates extends Component{
         }
     }
     componentWillMount() {
+        this.forceUpdate();
         let datProm = fetch('https://api.tfl.gov.uk/line/mode/tube%2C%20dlr/status?app_id=a9fae4b0&app_key=67f3c6d181cd35084ab2d1e9ce6065a6').then(function(response) {
             return response.json();
         });
 
 
         datProm.then(data => {
-            console.log(data);
             this.setState({
                 bakerloo:data["0"].lineStatuses["0"].statusSeverityDescription,
                 central:data["1"].lineStatuses["0"].statusSeverityDescription,
@@ -43,7 +43,6 @@ export default class TubeUpdates extends Component{
                 victoria:data["10"].lineStatuses["0"].statusSeverityDescription,
                 waterloo:data["11"].lineStatuses["0"].statusSeverityDescription,
             });
-            console.log(this.state);
         });
 
     }

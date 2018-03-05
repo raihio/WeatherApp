@@ -1,7 +1,9 @@
+
+
 #mainDiv {
     margin: 0 auto;
-    width: fit-content;
 }
+
 
 #current{
     height: 180px;
@@ -13,18 +15,32 @@
     padding-top: 55px;
 }
 
-#tableWrapper table, th, td {
-    border: 1px solid rgba(34, 34, 34, 0.85);
-    border-collapse: collapse;
+#tableWrapper table {
     margin: 0 auto;
     width: fit-content;
 }
 
-#tableWrapper td {
+#tableWrapper hr {
+    color: ghostwhite;
+    margin: 15px;
+}
+
+#tableWrapper th {
     text-align: center;
-    padding: 1px;
-    width: 100px;
+    border: none;
+    padding: 3px;
+    color: ghostwhite;
+}
+
+#tableWrapper td {
+    padding: 2px;
+    text-align: center;
+    border: none;
+    width: 90px;
     height: 45px;
+    font-size: 18px;
+    color: ghostwhite;
+
 }
 
 #farenDiv {
@@ -38,6 +54,7 @@
 
 #farenDiv h1 {
     margin: 0 auto;
+    color: ghostwhite;
 }
 
 #celsDiv {
@@ -51,5 +68,6 @@
 
 #celsDiv h1 {
     margin: 0 auto;
+    color: ghostwhite;
 }
 

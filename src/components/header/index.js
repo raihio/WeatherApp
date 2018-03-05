@@ -34,15 +34,15 @@ export default class Header extends Component{
     }
 
     render(){
-
         function openMenu(e) {
             e.preventDefault();
             document.getElementById("sideNav").style.width = "250px";
+            document.getElementById("burger").style.visibility = "hidden";
         }
-
         function closeMenu(e) {
             e.preventDefault();
             document.getElementById("sideNav").style.width = "0px";
+            document.getElementById("burger").style.visibility = "visible";
         }
 
         return(
@@ -58,7 +58,7 @@ export default class Header extends Component{
                             <a href={"javascript:void(0)"} className="sideNavCloseBtn" onClick={closeMenu}> <i class="fas fa-times"/> </a>
                             <div onClick={closeMenu}>
                                 <Link to="/" className="menuItem">Home</Link>
-                                <Link to="/weekly" className="menuItem">Weekly Weather</Link>
+                                <Link to="/weekly" className="menuItem">Weekly Forecast</Link>
                                 <Link to="/travel" className="menuItem">Travel Status</Link>
                                 <Link to="/changeLoc" className="menuItem">Change Location</Link>
                             </div>
