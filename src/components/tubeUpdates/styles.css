@@ -1,71 +1,74 @@
-#train{
-    border: 1px solid rgba(34, 34, 34, 0.85);
+#train {
     border-collapse: collapse;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#siraj {
+    color: rgba(248, 248, 255, 0.8);
 }
 
 #train td {
+    vertical-align: middle;
     text-align: center;
     padding: 1px;
-    width: 100px;
+    margin: 0 auto;
+    width: 150px;
     height: 35px;
 }
+
+#train th {
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 20px;
+}
+
 .Bakerloo{
     background-color: 	#996633;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Central{
     background-color: #CC3333;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Circle{
     background-color: #FFCC00;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .District{
     background-color: #006633;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Hammersmith{
     background-color: #CC9999;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Jubilee{
     background-color: #868F98;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Metropolitan{
     background-color: #660066;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Northern{
     background-color: #000000;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Piccadilly{
     background-color: #000099;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Victoria{
     background-color: #0099CC;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .Waterloo{
     background-color: #66CCCC;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }
 .DLR{
     background-color: #009999;
-    color: white;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    border: 1px solid rgba(34, 34, 34, 0.5);
 }

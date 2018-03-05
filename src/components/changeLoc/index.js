@@ -47,8 +47,8 @@ export default class changeLoc extends Component{
                 <br/>
                 <div  className="wholeForm">
                     <input type={"text"} placeholder={"Enter new location"} required={true} className="Elem" id={"newLoc"}/>
-                    <button type={"button"} onClick={this.getNewLoc} id={"btn"}>Submit</button>
-                    <h5 id="responseMess"> </h5>
+                    <button type={"button"} onClick={this.getNewLoc} className="btn">Submit</button>
+                    <h3 id="responseMess"> </h3>
                 </div>
             </div>
         )

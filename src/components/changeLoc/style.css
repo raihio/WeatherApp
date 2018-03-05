@@ -6,11 +6,21 @@
 
 .Elem {
     margin: 5px;
+    border: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .curLoc {
     width: fit-content;
     margin: 20px auto;
+    color: rgba(248, 248, 255, 0.8);
+}
+
+.btn {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 #responseMess {
