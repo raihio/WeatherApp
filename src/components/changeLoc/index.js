@@ -42,22 +42,6 @@ export default class changeLoc extends Component{
 
     render(){
 
-        var form = {
-            wholeForm: {
-                width: "fit-content",
-                margin: "0 auto",
-            },
-
-            Elem: {
-                margin: "5px",
-            },
-
-            curLoc: {
-                width: "fit-content",
-                margin: "20px auto",
-            }
-        };
-
         return(
 
             <div>

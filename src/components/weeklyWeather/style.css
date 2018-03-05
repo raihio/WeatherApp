@@ -1,13 +1,10 @@
 .tableWrap {
     margin: 25px auto;
     width: fit-content;
-    border: 1px solid rgba(34, 34, 34, 0.85);
-    border-collapse: collapse;
 }
 
 .tableWrap table, th, td {
     border: 1px solid rgba(34, 34, 34, 0.85);
-    border-collapse: collapse;
 }
 
 .tableWrap tr:nth-child(even) {background-color: rgba(0, 0, 0, 0);}
