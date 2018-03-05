@@ -53,9 +53,11 @@
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0.85);
-    overflow: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .sideNavCloseBtn {
