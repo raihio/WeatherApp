@@ -4,6 +4,8 @@ import styles from './styles.css';
 
 export default class TubeUpdates extends Component{
 
+
+
     constructor() {
         super();
         this.state = {
@@ -19,8 +21,20 @@ export default class TubeUpdates extends Component{
             piccadilly: '',
             victoria: '',
             waterloo: '',
+            lastUpdate: 'Never'
         }
     }
+
+
+
+    getCurrTime() {
+        var d = new Date();
+        var h = d.getUTCHours();
+        var min = d.getUTCMinutes();
+        if (min < 10) min = "0" + min;
+        return h + ":" + min;
+    }
+
     componentWillMount() {
         this.forceUpdate();
         // gets TFL data from API
@@ -44,10 +58,13 @@ export default class TubeUpdates extends Component{
                 piccadilly:data["9"].lineStatuses["0"].statusSeverityDescription,
                 victoria:data["10"].lineStatuses["0"].statusSeverityDescription,
                 waterloo:data["11"].lineStatuses["0"].statusSeverityDescription,
+                lastUpdate: this.getCurrTime()
             });
         });
 
     }
+
+
 
     render(){
 
@@ -120,6 +137,10 @@ export default class TubeUpdates extends Component{
                     </tr>
                     </div>
                 </table>
+                <div>
+                    <br/>
+                    <h3>Last Update: {this.state.lastUpdate}</h3>
+                </div>
             </div>
 
         )

@@ -41,8 +41,9 @@ export default class changeLoc extends Component{
                     cookie.latitude = newLat;
                     document.cookie = JSON.stringify(cookie);
                     document.getElementById("responseMess").innerText = "Location Changed";
-                    document.getElementById("responseMess").style.color = "#3bce5a";
+                    document.getElementById("responseMess").style.color = "#f8f8ff";
                     document.getElementById("responseMess").style.visibility = "unset";
+                    window.location.reload();
                     console.log(document.cookie);
                 }
                 else {
@@ -58,7 +59,8 @@ export default class changeLoc extends Component{
     render(){
         return(
             <div>
-                <h3 className="curLoc"> Current Location: {getLoc()}</h3>
+                <h3 className="curLoc"> Current Location: </h3>
+                <h3 className="curLoc"> {getLoc()} </h3>
                 <br/>
                 <div  className="wholeForm">
                     {/* Form for entering new location */}

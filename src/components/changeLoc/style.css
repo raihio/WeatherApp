@@ -1,7 +1,7 @@
 
 .wholeForm {
     width: fit-content;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 
 .Elem {
@@ -9,11 +9,14 @@
     border: none;
     color: #2e2e2e;
     background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    height: 30px;
+    width: 200px;
 }
 
 .curLoc {
     width: fit-content;
-    margin: 20px auto;
+    margin: 5px auto;
     color: rgba(248, 248, 255, 0.8);
 }
 
@@ -21,6 +24,8 @@
     border: none;
     background-color: rgba(255, 255, 255, 0.5);
     color: rgba(0, 0, 0, 0.8);
+    height: 30px;
+    width: 70px;
 }
 
 #responseMess {

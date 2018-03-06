@@ -7,9 +7,10 @@
 
 #current{
     height: 180px;
-    width: fit-content;
+    width: 100%;
     margin: 0 auto;
 }
+
 
 #tableWrapper{
     padding-top: 55px;

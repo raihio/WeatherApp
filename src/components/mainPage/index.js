@@ -26,6 +26,7 @@ export default class mainPage extends Component{
         // given a unix time stamp, it converts to HH:MM
         var date = new Date(timestamp*1000);
         var hours = date.getHours();
+        if (hours < 12) hours = "0" + hours;
         var minutes = "0" + date.getMinutes();
         var formattedTime = hours + ':' + minutes.substr(-2);
         return formattedTime;
@@ -102,6 +103,7 @@ export default class mainPage extends Component{
                         color='#e8e8e8'
                         icon={this.state.mainIcon}
                         autoplay={true}
+                        id="wIcon"
                     />
                         <div id="celsDiv"><h1>{this.state.mainCels}°C | </h1></div>
                         <div id="farenDiv"><h1>{this.state.mainFaren}°F</h1></div>
