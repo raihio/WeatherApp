@@ -23,6 +23,7 @@ export default class mainPage extends Component{
     }
 
     static convertTime(timestamp) {
+        // given a unix time stamp, it converts to HH:MM
         var date = new Date(timestamp*1000);
         var hours = date.getHours();
         var minutes = "0" + date.getMinutes();
@@ -31,26 +32,27 @@ export default class mainPage extends Component{
     }
 
     componentWillMount(){
+        this.forceUpdate();
         let data = DarkSkyApi.loadItAll('daily,alerts,minutely,flags', JSON.parse(document.cookie))
             .then(result => {
+                // gets data from Dark Sky API
                 return result;
             });
 
         data.then(result => {
             this.setState({
+                // Parse data from the API Call and set state for main weather/icon
                 mainIcon: result.currently.icon.toUpperCase().replace('-', '_').replace('-', '_'),
-                currentFaren: parseInt(result.currently.temperature),
-                currentCels: parseInt(((result.currently.temperature - 32) * 0.556).toString())
-            });
-
-
-            this.setState({
+                /*currentFaren: parseInt(result.currently.temperature),
+                currentCels: parseInt(((result.currently.temperature - 32) * 0.556).toString())*/
                 mainFaren: parseInt(result.currently.temperature),
                 mainCels: parseInt(((result.currently.temperature - 32) * 0.556).toString()),
             });
 
             var hourly = result.hourly.data;
             this.setState({
+                // Parse data from the API Call and set state for hourly weather/icon
+                // uses 2 hour intervals
                 two: {
                     time: mainPage.convertTime(hourly[2]["time"]),
                     temp: parseInt(((hourly[2]["temperature"] - 32) * 0.556).toString()) + "°C",
@@ -95,6 +97,7 @@ export default class mainPage extends Component{
         return(
             <div className="mainDiv">
                 <div id={"current"}>
+                    {/*Use an icon with this tag*/}
                     <Skycons
                         color='#e8e8e8'
                         icon={this.state.mainIcon}
@@ -111,6 +114,7 @@ export default class mainPage extends Component{
                             <th className="title">Temperature</th>
                             <th className="title">Atmosphere</th>
                             </tr>
+                        {/*Each tr is a row for every 2 hours*/}
                         <tr>
                             <td>{this.state.two.time}</td>
                             <td>{this.state.two.temp}</td>

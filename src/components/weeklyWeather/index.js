@@ -23,6 +23,7 @@ export default class weeklyWeather extends Component{
     }
 
     static convertToDay(timestamp) {
+        // takes unix time stamp and returns the day
         const d = new Date(timestamp * 1000);
         var days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
         var num = d.getDay();
@@ -31,12 +32,15 @@ export default class weeklyWeather extends Component{
 
     }
     componentWillMount() {
-
+        this.forceUpdate();
+        // API call to get weekly weather data
         let data = DarkSkyApi.loadItAll('hourly,alerts,minutely,flags', JSON.parse(document.cookie)).then(result => {
             return result;
         });
 
         data.then(result => {
+            // Parse weekly hourly data and stores in state
+            // one object for each day
             var daily = result.daily.data;
             console.log(daily);
             this.setState({
@@ -93,6 +97,7 @@ export default class weeklyWeather extends Component{
                 <div className="tableWrap">
                     <h1>Weekly Forecast</h1>
                     <table>
+                        {/*Each tr is a table for for each day*/}
                         <tr>
                             <td className="cell">{this.state.one.day}</td>
                             <td className="cell">{this.state.one.temp}</td>

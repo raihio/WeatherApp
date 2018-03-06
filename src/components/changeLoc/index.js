@@ -6,14 +6,19 @@ function getLoc() {
 }
 
 export default class changeLoc extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.getNewLoc.bind(this);
+    }
+
+    componentWillMount() {
+        this.forceUpdate();
     }
 
     getNewLoc = () => {
         var newLoc = document.getElementById("newLoc").value;
         if (newLoc == "") {
+            // if new location was not entered, error message will show
             document.getElementById("responseMess").innerText = "Error: Enter a Location";
             document.getElementById("responseMess").style.color = "#f44242";
             document.getElementById("responseMess").style.visibility = "unset";
@@ -26,12 +31,22 @@ export default class changeLoc extends Component{
                 return results.json();
             }).then(data => {
                 if (data.status == "OK") {
-                    console.log(data);
+                    // if location was valid, new location is added to state and cookies
+                    var newLoc = data.results["0"].address_components["0"].short_name;
+                    var newLong = data.results["0"].geometry.location.lng;
+                    var newLat = data.results["0"].geometry.location.lat;
+                    var cookie = JSON.parse(document.cookie);
+                    cookie.loc = newLoc;
+                    cookie.longitude = newLong;
+                    cookie.latitude = newLat;
+                    document.cookie = JSON.stringify(cookie);
                     document.getElementById("responseMess").innerText = "Location Changed";
                     document.getElementById("responseMess").style.color = "#3bce5a";
                     document.getElementById("responseMess").style.visibility = "unset";
+                    console.log(document.cookie);
                 }
                 else {
+                    // if API could not find location, error message shows
                     document.getElementById("responseMess").innerText = "Error: Invalid Location";
                     document.getElementById("responseMess").style.color = "#f44242";
                     document.getElementById("responseMess").style.visibility = "unset";
@@ -46,6 +61,7 @@ export default class changeLoc extends Component{
                 <h3 className="curLoc"> Current Location: {getLoc()}</h3>
                 <br/>
                 <div  className="wholeForm">
+                    {/* Form for entering new location */}
                     <input type={"text"} placeholder={"Enter new location"} required={true} className="Elem" id={"newLoc"}/>
                     <button type={"button"} onClick={this.getNewLoc} className="btn">Submit</button>
                     <h3 id="responseMess"> </h3>

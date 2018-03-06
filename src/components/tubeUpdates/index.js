@@ -23,12 +23,14 @@ export default class TubeUpdates extends Component{
     }
     componentWillMount() {
         this.forceUpdate();
+        // gets TFL data from API
         let datProm = fetch('https://api.tfl.gov.uk/line/mode/tube%2C%20dlr/status?app_id=a9fae4b0&app_key=67f3c6d181cd35084ab2d1e9ce6065a6').then(function(response) {
             return response.json();
         });
 
 
         datProm.then(data => {
+            //Parses TFL Tube data and stores it in state
             this.setState({
                 bakerloo:data["0"].lineStatuses["0"].statusSeverityDescription,
                 central:data["1"].lineStatuses["0"].statusSeverityDescription,
@@ -48,6 +50,7 @@ export default class TubeUpdates extends Component{
     }
 
     render(){
+
         return(
             <div align="center" id="siraj">
                 <h1> Tube Updates </h1>
@@ -57,6 +60,7 @@ export default class TubeUpdates extends Component{
                         <th>Line</th>
                         <th>Status</th>
                     </tr>
+                        {/*Each tr is a Tube Line*/}
                     <tr>
                         <td className="District">District</td>
                         <td>{this.state.district}</td>

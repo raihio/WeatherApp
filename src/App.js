@@ -6,20 +6,20 @@ DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
 export default class App extends Component {
 
-    componentWillMount() {
+    constructor(){
+        super();
+    }
 
+    componentWillMount() {
+        // attaches the font to the app
         const fa = document.createElement("script");
         fa.defer = true;
         fa.src = "https://use.fontawesome.com/releases/v5.0.6/js/all.js";
         document.head.appendChild(fa);
 
-/*        var position = {
-            latitude: "51.5287718",
-            longitude: "-0.2416804",
-            loc: "London, UK"
-        };*/
-
         if (document.cookie == "" || document.cookie == null) {
+            // if first time going on app, location is set to London by default
+            // and stored in cookies.
             this.state = {
                 latitude: "51.5287718",
                 longitude: "-0.2416804",
@@ -29,6 +29,7 @@ export default class App extends Component {
         }
 
         else {
+            // loads location from cookies
             this.state = JSON.parse(document.cookie);
         }
 
@@ -37,7 +38,8 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                {/*Renders the header*/}
+                <Header title={this.state.loc}/>
             </div>
         );
     }
