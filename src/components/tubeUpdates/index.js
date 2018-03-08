@@ -1,13 +1,12 @@
 import React, {h, Component} from 'react';
 import styles from './styles.css';
 
-
 export default class TubeUpdates extends Component{
-
-
 
     constructor() {
         super();
+        // Set the state of each London Underground line to empty String
+        // Changed later as API call is made
         this.state = {
             bakerloo: '',
             central: '',
@@ -21,6 +20,7 @@ export default class TubeUpdates extends Component{
             piccadilly: '',
             victoria: '',
             waterloo: '',
+            // Stores a time value for last update
             lastUpdate: 'Never'
         }
     }
@@ -28,6 +28,7 @@ export default class TubeUpdates extends Component{
 
 
     getCurrTime() {
+        // Returns the current time
         var d = new Date();
         var h = d.getUTCHours();
         var min = d.getUTCMinutes();
@@ -37,7 +38,7 @@ export default class TubeUpdates extends Component{
 
     componentWillMount() {
         this.forceUpdate();
-        // gets TFL data from API
+        // gets TFL data from API and stores it in a variable to be accessed later
         let datProm = fetch('https://api.tfl.gov.uk/line/mode/tube%2C%20dlr/status?app_id=a9fae4b0&app_key=67f3c6d181cd35084ab2d1e9ce6065a6').then(function(response) {
             return response.json();
         });
@@ -46,6 +47,7 @@ export default class TubeUpdates extends Component{
         datProm.then(data => {
             //Parses TFL Tube data and stores it in state
             this.setState({
+                // Each London Underground line has its data updated
                 bakerloo:data["0"].lineStatuses["0"].statusSeverityDescription,
                 central:data["1"].lineStatuses["0"].statusSeverityDescription,
                 circle:data["2"].lineStatuses["0"].statusSeverityDescription,
@@ -139,6 +141,7 @@ export default class TubeUpdates extends Component{
                 </table>
                 <div>
                     <br/>
+                    {/*Lets the user know when the London Underground data was last updated*/}
                     <h3>Last Update: {this.state.lastUpdate}</h3>
                 </div>
             </div>

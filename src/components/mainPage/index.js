@@ -1,14 +1,17 @@
 import React, {h, Component} from 'react';
 import styles from './style.css';
 import Skycons from 'react-skycons'
-
+// Skycons used for weather icons
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
+//import the weather API to get weather data
 
 export default class mainPage extends Component{
 
     constructor(){
         super();
+        // creates staet for current weather and weather the next 2-12 hours
+        // state is empty string so it can be changed later
         this.state = {
             mainIcon: '',
             mainFaren: '',
@@ -33,10 +36,11 @@ export default class mainPage extends Component{
     }
 
     componentWillMount(){
+        // this will run when the component is loaded
         this.forceUpdate();
         let data = DarkSkyApi.loadItAll('daily,alerts,minutely,flags', JSON.parse(document.cookie))
             .then(result => {
-                // gets data from Dark Sky API
+                // gets data from Dark Sky API, returns as a Promise
                 return result;
             });
 
@@ -98,7 +102,7 @@ export default class mainPage extends Component{
         return(
             <div className="mainDiv">
                 <div id={"current"}>
-                    {/*Use an icon with this tag*/}
+                    {/*Use an icon from Skycons API with this tag*/}
                     <Skycons
                         color='#e8e8e8'
                         icon={this.state.mainIcon}
@@ -116,7 +120,9 @@ export default class mainPage extends Component{
                             <th className="title">Temperature</th>
                             <th className="title">Atmosphere</th>
                             </tr>
-                        {/*Each tr is a row for every 2 hours*/}
+                        /*Each tr is a row for every 2 hours
+                        * 2 - 12 hours intervals
+                        * */
                         <tr>
                             <td>{this.state.two.time}</td>
                             <td>{this.state.two.temp}</td>

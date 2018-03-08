@@ -1,6 +1,7 @@
 import './style.css';
 import React, { Component } from 'react';
 import Header from './components/header';
+// Imports the DarkSky API
 const DarkSkyApi = require('dark-sky-api');
 DarkSkyApi.apiKey = 'a1057f9d5a5dbee71c1c7993eb8aa799';
 
@@ -25,6 +26,7 @@ export default class App extends Component {
                 longitude: "-0.2416804",
                 loc: "London, UK"
             };
+            //Location is always updated in Cookies so we can restore is later
             document.cookie = JSON.stringify(this.state);
         }
 
@@ -38,7 +40,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                {/*Renders the header*/}
+                {/*Renders the header only, the header will render the other components*/}
                 <Header title={this.state.loc}/>
             </div>
         );
