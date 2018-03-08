@@ -120,9 +120,9 @@ export default class mainPage extends Component{
                             <th className="title">Temperature</th>
                             <th className="title">Atmosphere</th>
                             </tr>
-                        /*Each tr is a row for every 2 hours
+                        {/*Each tr is a row for every 2 hours
                         * 2 - 12 hours intervals
-                        * */
+                        * */}
                         <tr>
                             <td>{this.state.two.time}</td>
                             <td>{this.state.two.temp}</td>

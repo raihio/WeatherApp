@@ -69,9 +69,9 @@ export default class changeLoc extends Component{
                 <h3 className="curLoc"> {getLoc()} </h3>
                 <br/>
                 <div  className="wholeForm">
-                    /* Form for entering new location
+                    {/* Form for entering new location
                     * Includes a text box and a submit button
-                    * */
+                    * */}
                     <input type={"text"} placeholder={"Enter new location"} required={true} className="Elem" id={"newLoc"}/>
                     <button type={"button"} onClick={this.getNewLoc} className="btn">Submit</button>
                     <h3 id="responseMess"> </h3>
