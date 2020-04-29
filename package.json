@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "dark-sky-api": "^0.6.21",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
